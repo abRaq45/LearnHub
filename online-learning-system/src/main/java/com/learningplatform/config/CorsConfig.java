@@ -17,9 +17,12 @@ public class CorsConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        // Allow React frontend
+        // Allow local and deployed React frontend
         configuration.setAllowedOrigins(
-                Arrays.asList("http://localhost:5173")
+                Arrays.asList(
+                        "http://localhost:5173",
+                        "https://learn-hub-orcin-mu.vercel.app"
+                )
         );
 
         // Allowed HTTP methods
@@ -34,13 +37,18 @@ public class CorsConfig {
                 )
         );
 
-        // Allow request headers
+        // Allow all request headers (including Authorization)
         configuration.setAllowedHeaders(
                 Arrays.asList("*")
         );
 
         // Allow credentials
         configuration.setAllowCredentials(true);
+
+        // Expose Authorization header if needed
+        configuration.setExposedHeaders(
+                Arrays.asList("Authorization")
+        );
 
         UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
