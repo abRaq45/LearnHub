@@ -11,22 +11,20 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class JwtService {
 
-    private final SecretKey signingKey;
+    private static final String SECRET_KEY =
+            "MyLearningPlatformSecretKey12345678901234567890";
 
     private static final long EXPIRATION_TIME =
             1000L * 60 * 60 * 10; // 10 hours
 
-    public JwtService(@Value("${jwt.secret}") String secretKey) {
-        this.signingKey = Keys.hmacShaKeyFor(
-                secretKey.getBytes(StandardCharsets.UTF_8)
-        );
-    }
+    private final SecretKey signingKey = Keys.hmacShaKeyFor(
+            SECRET_KEY.getBytes(StandardCharsets.UTF_8)
+    );
 
     public String generateToken(String email) {
         Date now = new Date();
