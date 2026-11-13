@@ -1,0 +1,340 @@
+
+/* =====================================
+   LEARNHUB NAVBAR
+===================================== */
+
+.learnhub-navbar {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #edf0f5;
+    box-shadow: 0 3px 15px rgba(15, 23, 42, 0.045);
+    min-height: 78px;
+    z-index: 1000;
+}
+
+.learnhub-container {
+    max-width: 1440px;
+    padding: 0 35px;
+}
+
+/* Brand */
+
+.learnhub-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #172b4d !important;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    margin-right: 25px;
+}
+
+.learnhub-brand > span:last-child > span {
+    color: #2875f0;
+}
+
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf1ff;
+    color: #2875f0;
+    border-radius: 11px;
+    font-size: 21px;
+}
+
+/* Navigation */
+
+.learnhub-nav {
+    align-items: center;
+    gap: 8px;
+}
+
+.learnhub-nav .nav-link {
+    position: relative;
+    color: #596579;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 13px !important;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.learnhub-nav .nav-link:hover,
+.learnhub-nav .nav-link.active {
+    color: #2875f0;
+}
+
+.learnhub-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 13px;
+    width: 0;
+    height: 2px;
+    background: #2875f0;
+    border-radius: 5px;
+    transition: width 0.2s ease;
+}
+
+.learnhub-nav .nav-link:hover::after,
+.learnhub-nav .nav-link.active::after {
+    width: calc(100% - 26px);
+}
+
+/* Authentication Actions */
+
+.learnhub-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+/* User Welcome */
+
+.user-welcome {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 5px 12px 5px 5px;
+    margin-right: 3px;
+    border-right: 1px solid #e8edf4;
+    max-width: 185px;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf1ff;
+    color: #2875f0;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.welcome-label {
+    color: #929bad;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.welcome-name {
+    color: #26354d;
+    font-size: 12px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 125px;
+}
+
+/* Profile Button */
+
+.profile-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 15px;
+    color: #2875f0;
+    background: #f0f5ff;
+    border: 1px solid #e0eaff;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.profile-nav-btn i {
+    font-size: 15px;
+}
+
+.profile-nav-btn:hover {
+    background: #2875f0;
+    color: #ffffff;
+    border-color: #2875f0;
+}
+
+/* Logout Button */
+
+.logout-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 15px;
+    color: #e34d59;
+    background: #fff5f5;
+    border: 1px solid #ffe0e2;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.logout-nav-btn i {
+    font-size: 15px;
+}
+
+.logout-nav-btn:hover {
+    background: #e34d59;
+    color: #ffffff;
+    border-color: #e34d59;
+}
+
+/* Login and Register */
+
+.login-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 20px;
+    color: #2875f0;
+    background: #ffffff;
+    border: 1px solid #dce7ff;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.login-nav-btn:hover {
+    background: #f0f5ff;
+    color: #165bd0;
+}
+
+.register-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 40px;
+    padding: 0 19px;
+    color: #ffffff;
+    background: #2875f0;
+    border: 1px solid #2875f0;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.register-nav-btn:hover {
+    background: #165bd0;
+    color: #ffffff;
+    border-color: #165bd0;
+}
+
+/* Mobile Toggle */
+
+.learnhub-toggler {
+    border: 1px solid #e1e8f2;
+    border-radius: 9px;
+    padding: 7px 10px;
+    box-shadow: none !important;
+}
+
+.learnhub-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(40, 117, 240, 0.12) !important;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1199.98px) {
+
+    .learnhub-container {
+        padding: 12px 22px;
+    }
+
+    .learnhub-navbar .navbar-collapse {
+        padding-top: 15px;
+    }
+
+    .learnhub-nav {
+        align-items: flex-start;
+        gap: 2px;
+        padding-bottom: 12px;
+    }
+
+    .learnhub-nav .nav-link {
+        padding: 10px 5px !important;
+    }
+
+    .learnhub-nav .nav-link::after {
+        display: none;
+    }
+
+    .learnhub-actions {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 12px 0 5px;
+        border-top: 1px solid #edf0f5;
+    }
+
+    .user-welcome {
+        border-right: none;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .learnhub-container {
+        padding: 10px 16px;
+    }
+
+    .learnhub-brand {
+        font-size: 23px;
+    }
+
+    .brand-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 19px;
+    }
+
+    .learnhub-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .user-welcome {
+        max-width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .welcome-name {
+        max-width: 220px;
+    }
+
+    .profile-nav-btn,
+    .logout-nav-btn,
+    .login-nav-btn,
+    .register-nav-btn {
+        width: 100%;
+        min-height: 43px;
+    }
+}

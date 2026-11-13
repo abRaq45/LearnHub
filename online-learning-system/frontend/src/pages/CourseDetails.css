@@ -1,0 +1,126 @@
+
+.course-details-page {
+    min-height: 80vh;
+    background: #ffffff;
+}
+
+.course-details-hero {
+    background: linear-gradient(135deg, #eef4ff, #f8faff);
+    padding: 55px 0 75px;
+}
+
+.back-link {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.course-details-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #17233b;
+}
+
+.course-details-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #596579;
+}
+
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    color: #475569;
+    font-weight: 600;
+}
+
+.course-details-image-wrapper {
+    background: white;
+    padding: 12px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.course-details-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.course-about-text {
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.course-information-card {
+    padding: 28px;
+    border: 1px solid #e5eaf2;
+    border-radius: 15px;
+    background: #ffffff;
+}
+
+.course-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.course-info-row:last-child {
+    border-bottom: none;
+}
+
+.course-info-row span {
+    color: #64748b;
+}
+
+.course-info-row strong {
+    color: #17233b;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.course-sidebar-card {
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e5eaf2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.course-sidebar-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+}
+
+@media (max-width: 768px) {
+    .course-details-hero {
+        padding: 35px 0 50px;
+    }
+
+    .course-details-image {
+        height: 220px;
+    }
+
+    .course-information-card {
+        padding: 20px;
+    }
+
+    .course-info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .course-info-row strong {
+        text-align: left;
+    }
+}
