@@ -1,3 +1,4 @@
+
 package com.learningplatform.security;
 
 import java.nio.charset.StandardCharsets;
@@ -10,21 +11,22 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class JwtService {
 
-    // Local-development example only; replace with a private random key.
-    private static final String SECRET_KEY =
-            "MyLearningPlatformSecretKey12345678901234567890";
+    private final SecretKey signingKey;
 
     private static final long EXPIRATION_TIME =
             1000L * 60 * 60 * 10; // 10 hours
 
-    private final SecretKey signingKey = Keys.hmacShaKeyFor(
-            SECRET_KEY.getBytes(StandardCharsets.UTF_8)
-    );
+    public JwtService(@Value("${jwt.secret}") String secretKey) {
+        this.signingKey = Keys.hmacShaKeyFor(
+                secretKey.getBytes(StandardCharsets.UTF_8)
+        );
+    }
 
     public String generateToken(String email) {
         Date now = new Date();
