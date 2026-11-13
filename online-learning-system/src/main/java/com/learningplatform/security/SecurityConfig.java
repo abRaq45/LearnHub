@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import org.springframework.web.cors.CorsConfigurationSource;
+
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
@@ -30,14 +32,18 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(
-            HttpSecurity http) throws Exception {
+            HttpSecurity http,
+            CorsConfigurationSource corsConfigurationSource)
+            throws Exception {
 
         http
                 // Disable CSRF
                 .csrf(csrf -> csrf.disable())
 
-                // Enable CORS
-                .cors(cors -> {})
+                // Enable CORS using CorsConfig.java
+                .cors(cors ->
+                        cors.configurationSource(corsConfigurationSource)
+                )
 
                 // Disable default authentication mechanisms
                 .formLogin(form -> form.disable())
