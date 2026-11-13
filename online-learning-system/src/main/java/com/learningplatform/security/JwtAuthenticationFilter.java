@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component
@@ -37,7 +38,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String path = request.getServletPath();
 
+        // Skip CORS preflight requests
+        if (CorsUtils.isPreFlightRequest(request)) {
+            return true;
+        }
+
+        // Skip public authentication endpoints
         return path.equals("/api/auth/login")
+                || path.equals("/api/auth/register")
                 || path.equals("/api/users/register");
     }
 
